@@ -599,3 +599,7 @@ ul.list-unstyled.chat {
 .form-control:focus {
   border-color: rgba(0,0,0,.15);
 }
+
+.hidden {
+  display: none;
+}
