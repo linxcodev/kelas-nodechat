@@ -10,6 +10,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 });
 
+let users = {},
+    usernames = []
+
 io.on('connection', socket => {
   // mengirim pesan
   socket.on('newMessage', (msg) => {
@@ -19,7 +22,15 @@ io.on('connection', socket => {
   // login
   // mendeteksi informasi dari client side key, value
   socket.on("loginUser", username => {
-    socket.emit('loginResponse', true)
+      // menampilkan user online
+      usernames.push(username)
+      users[socket.id] = username
+      // console.log(usernames);
+      // kririm data untuk semua user
+      io.emit('onlineUsers', usernames)
+
+      // kririm data untuk kita sendiri
+      socket.emit('loginResponse', true)
   })
 });
 
