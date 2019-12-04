@@ -14,11 +14,6 @@ let users = {},
     usernames = []
 
 io.on('connection', socket => {
-  // mengirim pesan
-  socket.on('newMessage', (msg) => {
-    io.emit('newMessage', msg)
-  })
-
   // login
   // mendeteksi informasi dari client side key, value
   socket.on("loginUser", username => {
@@ -35,7 +30,7 @@ io.on('connection', socket => {
 
   // chat message
   socket.on('newMessage', user => {
-    io.emit('newMsg', user)
+    io.emit('newMessage', user)
   })
 
   socket.on('disconnect', () => {
