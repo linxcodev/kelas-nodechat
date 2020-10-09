@@ -11,3 +11,18 @@
     "socket.io": "^2.3.0"
   }
 }
+
+{
+  "name": "kelas-nodechat",
+  "version": "1.0.0",
+  "description": "kelas membuat chat menggunakan express js dan socket io",
+  "main": "server.js",
+  "repository": "https://github.com/linxcodev/kelas-nodechat.git",
+  "author": "linxcodev <fajrul452@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "uniqid": "^5.2.0" // uniq uuid jika perlu
+  }
+}
